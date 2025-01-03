@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simulator.General", "Simulator.General\Simulator.General.csproj", "{52934646-498D-479F-BC7F-0DA26295C7B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simulator.Game", "Simulator.Game\Simulator.Game.csproj", "{187A08F5-1AFF-4114-A3D9-C1864F90F25D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52934646-498D-479F-BC7F-0DA26295C7B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52934646-498D-479F-BC7F-0DA26295C7B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52934646-498D-479F-BC7F-0DA26295C7B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52934646-498D-479F-BC7F-0DA26295C7B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{187A08F5-1AFF-4114-A3D9-C1864F90F25D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{187A08F5-1AFF-4114-A3D9-C1864F90F25D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{187A08F5-1AFF-4114-A3D9-C1864F90F25D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{187A08F5-1AFF-4114-A3D9-C1864F90F25D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D448F3E6-FBA0-4A6F-93ED-E89B86D3E855}
+	EndGlobalSection
+EndGlobal
