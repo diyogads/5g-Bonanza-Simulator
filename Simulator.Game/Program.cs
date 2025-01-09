@@ -92,16 +92,45 @@ else if (!input.Contains("rtp"))
 
                 foreach (var combo in spin.Combos)
                 {
-                    Console.WriteLine($"x{combo.Length} {Symbols.Name[combo.SymbolId]} for {combo.Ways} way/s: {combo.CoinsWon/combo.Ways} coins");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.Write($"x{combo.Length} {Symbols.Name[combo.SymbolId]}");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write(" (");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.Write($"{combo.CoinsWon}");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write(" coins) for ");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.Write($"{combo.Ways}");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write(" way/s with x");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.Write($"{combo.Multiplier}");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write(" multiplier: ");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.Write($"{combo.TotalCoinsWon}");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine(" coins");
                 }
 
-                Console.WriteLine($"Total coins won: {spin.TotalCoinsWon}");
+                Console.Write("Total spin coins won: ");
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine($"{ spin.TotalCoinsWon }");
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine();
             }
         }
 
-        Console.WriteLine($"Total coins won: {round.TotalCoinsWon}");
-        Console.WriteLine($"Total amount won: {round.TotalAmountWon}");
+        Console.Write("Total coins won: ");
+        Console.ForegroundColor = ConsoleColor.Cyan;
+        Console.WriteLine($"{round.TotalCoinsWon}");
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.Write("Total amount won: ");
+        Console.ForegroundColor = ConsoleColor.Cyan;
+        Console.WriteLine($"{round.TotalAmountWon}");
+        Console.ForegroundColor = ConsoleColor.White;
+
         Console.WriteLine();
         Console.WriteLine("> Type \"exit\" to end");
         Console.WriteLine("> Press \"Enter\" if you'd like to spin one without seed");

@@ -22,5 +22,9 @@ namespace Simulator.General.Helpers
         {
             return Math.Round(decimal.Divide(dividend, divisor) * 100, decimalPlaces);
         }
+        public static decimal GetRemainder(decimal dividend, decimal divisor, int decimalPlaces = 8)
+        {
+            return Math.Round(decimal.Divide(dividend, divisor), decimalPlaces);
+        }
     }
 }

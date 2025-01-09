@@ -21,6 +21,7 @@ namespace Simulator.Game
         public void ClearAll()
         {
             Randomizer.Reset();
+            SlotCalculator.FreeSpinsMultiplier = 1;
         }
 
         public RoundInformation PlayRound()
@@ -101,6 +102,7 @@ namespace Simulator.Game
 
             while (spin.TotalCoinsWon > 0)
             {
+                SlotCalculator.FreeSpinsMultiplier++;
                 spin = PlayCascade(SpinType.Free);
                 spinInformation.Add(spin);
             }

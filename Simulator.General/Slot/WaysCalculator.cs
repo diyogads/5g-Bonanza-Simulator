@@ -9,6 +9,7 @@ namespace Simulator.General.Slot
         public List<SymbolPays> PayTable { get; set; } = new List<SymbolPays>();
         public bool IsLeftToRight = true;
         public List<int> WildSymbolIds { get; set; } = new List<int>();
+        public int FreeSpinsMultiplier { get; set; } = 1;
 
         public void CalculateWinnings()
         {
@@ -63,9 +64,10 @@ namespace Simulator.General.Slot
                     {
                         SymbolId = symbolId,
                         Indices = indices.ToArray(),
-                        CoinsWon = (int)winningAmount * ways,
+                        CoinsWon = (int)winningAmount,
                         Length = depth,
-                        Ways = ways
+                        Ways = ways,
+                        Multiplier = FreeSpinsMultiplier
                     });
                 }
             }

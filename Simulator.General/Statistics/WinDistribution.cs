@@ -1,6 +1,5 @@
 ﻿using Simulator.General.Helpers;
 using Simulator.General.Slot;
-using System.Net.Sockets;
 
 namespace Simulator.General.Statistics
 {
@@ -19,12 +18,12 @@ namespace Simulator.General.Statistics
 
                 if (bucket.Floor == 0 && bucket.Ceiling == 0 && round.TotalAmountWon == 0)
                 {
-                    bucket.TotalCoinsWon += round.TotalCoinsWon;
+                    bucket.TotalAmountWon += round.TotalAmountWon;
                     bucket.TotalCount++;
                 }
                 else if (bucket.Floor < round.TotalAmountWon && bucket.Ceiling >= round.TotalAmountWon)
                 {
-                    bucket.TotalCoinsWon += round.TotalCoinsWon;
+                    bucket.TotalAmountWon += round.TotalAmountWon;
                     bucket.TotalCount++;
                 }
             }
@@ -38,7 +37,7 @@ namespace Simulator.General.Statistics
                 {
                     if (bucket.SymbolId == combo.SymbolId && bucket.SymbolCount <= combo.Length)
                     {
-                        bucket.TotalCoinsWon += round.TotalCoinsWon;
+                        bucket.TotalAmountWon += round.TotalAmountWon;
                         bucket.TotalCount++;
                     }
                 }
@@ -71,14 +70,14 @@ namespace Simulator.General.Statistics
             Console.WriteLine("-------------------------");
             Console.WriteLine("Winning\t\tTotal Count\tDistribution\tProbability");
 
-            var totalWon = SymbolWinBuckets.Sum(s => s.TotalCoinsWon);
+            var totalWon = SymbolWinBuckets.Sum(s => s.TotalAmountWon);
             var symbol = string.Empty;
 
             foreach (var bucket in SymbolWinBuckets)
             {
                 symbol = SymbolNames != null ? $"{bucket.SymbolCount} {SymbolNames[bucket.SymbolId]}" : $"{bucket.SymbolCount} {bucket.SymbolId}";
 
-                Console.WriteLine($"x{symbol}\t\t{bucket.TotalCount}\t\t{string.Format("{0:0.0000000}", Helper.GetProbability(bucket.TotalCoinsWon, totalWon))} %\t{string.Format("{0:0.0000000}", Helper.GetProbability(bucket.TotalCount, totalRounds))} %");
+                Console.WriteLine($"x{symbol}\t\t{bucket.TotalCount}\t\t{string.Format("{0:0.0000000}", Helper.GetProbability(bucket.TotalAmountWon, totalWon))} %\t{string.Format("{0:0.0000000}", Helper.GetProbability(bucket.TotalCount, totalRounds))} %");
             }
         }
     }

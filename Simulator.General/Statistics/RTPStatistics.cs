@@ -18,10 +18,10 @@ namespace Simulator.General.Statistics
 
         public decimal TotalWin => BaseGameWin + FreeSpinWin;
         public int TotalFreeSpins => (FreeSpinsTriggerCount + FreeSpinsReTriggerCount) * 5;
-        public decimal BaseGameRTP => decimal.Divide(BaseGameWin, TotalBet); 
-        public decimal FreeSpinRTP => decimal.Divide(FreeSpinWin, TotalBet);
+        public decimal BaseGameRTP => Helper.GetRemainder(BaseGameWin, TotalBet); 
+        public decimal FreeSpinRTP => Helper.GetRemainder(FreeSpinWin, TotalBet);
         public decimal OverallRTP => BaseGameRTP + FreeSpinRTP;
-        public decimal FreeSpinAveragePay => decimal.Divide(FreeSpinWin, FreeSpinsTriggerCount);
+        public decimal FreeSpinAveragePay => Helper.GetRemainder(FreeSpinWin, FreeSpinsTriggerCount);
 
 
         public WinDistribution WinDistribution { get; set; } = new WinDistribution();

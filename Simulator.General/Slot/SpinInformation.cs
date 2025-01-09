@@ -10,7 +10,8 @@ namespace Simulator.General.Slot
         public bool IsCascade { get; set; } = false;
         public int[][] Symbols { get; set; } = Array.Empty<int[]>();
         public Combo[] Combos { get; set; } = Array.Empty<Combo>();
-        public int TotalCoinsWon => Combos.ToList().Sum(c => c.CoinsWon);
+        public int TotalCoinsWon => Combos.ToList().Sum(c => c.TotalCoinsWon);
+        public decimal TotalAmountWon => Helper.GetRemainder(TotalCoinsWon, Bet);
         public int Bet { get; set; }
         public SpinInformation(int bet = 20)
         {
